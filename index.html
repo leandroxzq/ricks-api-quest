@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="src/scss/style.css" />
+		<title>Rick and Morty Finder</title>
+	</head>
+	<body>
+		<main class="main">
+			<input type="text" class="main__find" placeholder="Morty..." />
+			<div class="character-wrapper"></div>
+			<nav class="main__nav">
+				<button class="main__btn" id="btnPrevious"><</button>
+				<span style="color: #fff; text-align: center" class="page"></span>
+				<button class="main__btn" id="btnNext">></button>
+			</nav>
+		</main>
+		<div class="background">
+			<div class="details-wrapper desactive">
+				<button class="details-wrapper__close">×</button>
+				<img src="" alt="" class="details-wrapper__img" />
+				<section class="section-info">
+					<span class="section-info__name"></span>
+					<div class="section-info__status">
+						<span class="statusBall"></span>
+						<span class="infoName"></span>
+					</div>
+					<span class="section-info__sex"></span>
+				</section>
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
