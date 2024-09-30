@@ -1,5 +1,9 @@
 @import "mixin";
 
+@font-face {
+	font-family: "shlop";
+	src: url(../fonts/shlop\ rg.otf);
+}
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
@@ -47,10 +51,15 @@ body {
 		@include center;
 		border: none;
 		background: #fff;
-		padding: 0.8rem 1rem;
-		font-size: 1.4rem;
+		padding: 0.6rem 0.8rem;
+		font-size: 2rem;
+		font-weight: bolder;
 		border-radius: 8px;
 		cursor: pointer;
+
+		.bi:hover {
+			color: #0bc76f;
+		}
 	}
 
 	&__find {
@@ -62,7 +71,7 @@ body {
 		margin: 0 auto;
 
 		&:focus {
-			outline: 2px solid #286d37;
+			outline: 2px solid #0bc76f;
 		}
 	}
 }
@@ -89,6 +98,7 @@ body {
 			filter: grayscale(0%);
 			transform: scale(1.1) !important;
 			transition: all 0.5s;
+			cursor: pointer;
 		}
 	}
 }
@@ -96,6 +106,7 @@ body {
 .background {
 	@include center;
 	height: 100dvh;
+	width: 100vw;
 	position: absolute;
 }
 
@@ -128,11 +139,17 @@ body {
 	.section-info {
 		display: flex;
 		flex-direction: column;
-		padding: 2rem 2rem 1rem;
+		justify-content: space-evenly;
+		padding: 0rem 2rem 1rem;
 		flex: 1 1 300px;
 
 		&__name {
-			font-size: 1.4rem;
+			font-size: 1.8rem;
+			font-family: "shlop";
+			letter-spacing: 2.5px;
+			color: #02b0c7;
+			filter: drop-shadow(0px 0px 10px #8dc663);
+			text-shadow: #000 2px 2px;
 		}
 
 		&__status {

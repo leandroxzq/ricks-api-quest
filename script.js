@@ -8,7 +8,7 @@ const loadCharacter = async (urlCharacter) => {
 	const req = await fetch(urlCharacter);
 	const json = await req.json();
 
-	console.log(json.results[0]);
+	console.log(json.results[1]);
 
 	container.innerHTML = "";
 
@@ -23,6 +23,8 @@ const loadCharacter = async (urlCharacter) => {
 		img.src = personagem.image;
 
 		img.addEventListener("click", (e) => {
+			const main = document.querySelector(".main");
+			const background = document.querySelector(".background");
 			const detailsWrapper = document.querySelector(".details-wrapper");
 			const detailsImg = document.querySelector(".details-wrapper__img");
 			const detailsClose = document.querySelector(".details-wrapper__close");
@@ -30,14 +32,19 @@ const loadCharacter = async (urlCharacter) => {
 			const detailsName = document.querySelector(".section-info__name");
 			const detailsStatus = document.querySelector(".infoName");
 			const detailsSex = document.querySelector(".section-info__sex");
+			const detailsEp = document.querySelector(".section-info__ep");
 
+			background.classList.remove("desactive");
 			detailsWrapper.classList.remove("desactive");
 			detailsWrapper.classList.add("active");
+
+			main.style.filter = "blur(4px)";
 
 			detailsImg.src = personagem.image;
 			detailsName.textContent = personagem.name;
 			detailsStatus.textContent = `${personagem.status}-${personagem.species}`;
 			detailsSex.textContent = `Gênero: ${personagem.gender}`;
+			detailsEp.textContent = `Participou de ${personagem.episode.length} episódios`;
 
 			const statusBefore = document.querySelector(".statusBall");
 
@@ -47,6 +54,8 @@ const loadCharacter = async (urlCharacter) => {
 
 			detailsClose.addEventListener("click", (e) => {
 				if (e.target) {
+					main.style.filter = "blur(0px)";
+					background.classList.add("desactive");
 					detailsWrapper.classList.remove("active");
 					detailsWrapper.classList.add("desactive");
 				}
