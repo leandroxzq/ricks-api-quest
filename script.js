@@ -1,14 +1,23 @@
-const find = document.querySelector(".main__find").value.trim();
+const find = document.querySelector(".main__find");
 
 const container = document.querySelector(".character-wrapper");
 
 let num = 1;
+let currentSearchTerm = "";
+
+find.addEventListener("input", () => {
+	currentSearchTerm = find.value.trim();
+
+	num = 1;
+
+	const inputUserName = `https://rickandmortyapi.com/api/character/?page=${num}&name=${currentSearchTerm}`;
+
+	loadCharacter(inputUserName);
+});
 
 const loadCharacter = async (urlCharacter) => {
 	const req = await fetch(urlCharacter);
 	const json = await req.json();
-
-	console.log(json.results[1]);
 
 	container.innerHTML = "";
 
@@ -42,8 +51,8 @@ const loadCharacter = async (urlCharacter) => {
 
 			detailsImg.src = personagem.image;
 			detailsName.textContent = personagem.name;
-			detailsStatus.textContent = `${personagem.status}-${personagem.species}`;
-			detailsSex.textContent = `Gênero: ${personagem.gender}`;
+			detailsStatus.textContent = `${translateText(personagem.status)} - ${translateText(personagem.species)}`;
+			detailsSex.textContent = `Gênero: ${translateText(personagem.gender)}`;
 			detailsEp.textContent = `Participou de ${personagem.episode.length} episódios`;
 
 			const statusBefore = document.querySelector(".statusBall");
@@ -65,8 +74,9 @@ const loadCharacter = async (urlCharacter) => {
 };
 
 const loadCurrentCharacter = () => {
-	const page = `?page=${num}`;
-	const urlCharacter = `https://rickandmortyapi.com/api/character${page}`;
+	const urlCharacter = currentSearchTerm
+		? `https://rickandmortyapi.com/api/character/?page=${num}&name=${currentSearchTerm}`
+		: `https://rickandmortyapi.com/api/character/?page=${num}`;
 	loadCharacter(urlCharacter);
 };
 
@@ -88,3 +98,16 @@ btnPrevious.addEventListener("click", () => {
 		loadCurrentCharacter();
 	}
 });
+
+const translateText = (text) => {
+	const translateMap = {
+		Alive: "Vivo",
+		Dead: "Morto",
+		unknown: "Desconhecido",
+		Female: "Feminino",
+		Male: "Masculino",
+		Human: "Humano",
+	};
+
+	return translateMap[text];
+};
