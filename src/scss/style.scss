@@ -79,9 +79,11 @@ body {
 	align-items: start;
 	justify-content: center;
 	flex-wrap: wrap;
+	align-content: start;
 	gap: 1rem;
 	max-width: 850px;
 	min-width: 850px;
+	min-height: 650px;
 	user-select: none;
 	margin: 1rem 0;
 
