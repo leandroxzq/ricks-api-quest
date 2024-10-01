@@ -1,5 +1,4 @@
-# Rick and Morty Character Explorer
-
+# Rick and Morty Quest
 Este projeto permite explorar personagens da série **Rick and Morty** através de uma interface interativa com busca e navegação por páginas. A aplicação consome a API [Rick and Morty](https://rickandmortyapi.com/) para exibir informações detalhadas de cada personagem.
 
 ## Funcionalidades
