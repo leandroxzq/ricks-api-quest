@@ -108,7 +108,7 @@ body {
 
 .details-wrapper {
   background-color: #0d1117;
-  position: absolute;
+  position: fixed;
   color: #fff;
   border-radius: 20px;
   min-height: 300px;
