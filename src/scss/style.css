@@ -25,15 +25,13 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 100dvh;
   gap: 1rem;
   justify-content: space-between;
 }
-.main .input-wrapper {
+.main-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  width: 100%;
 }
 .main__nav {
   display: flex;
@@ -63,8 +61,7 @@ body {
   border-radius: 12px;
   border: none;
   font-size: 1.2rem;
-  width: 100%;
-  margin: 0 auto;
+  width: 95%;
 }
 .main__find:focus {
   outline: 2px solid #0bc76f;
@@ -72,7 +69,8 @@ body {
 
 .character-wrapper {
   display: flex;
-  align-items: center;
+  align-items: start;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
   max-width: 850px;
@@ -168,4 +166,10 @@ body {
 
 .desactive {
   display: none;
+}
+
+@media (width <= 885px) {
+  .character-wrapper {
+    min-width: 0px;
+  }
 }/*# sourceMappingURL=style.css.map */
