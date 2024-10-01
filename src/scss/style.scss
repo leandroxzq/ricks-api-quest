@@ -187,3 +187,31 @@ body {
 		min-width: 0px;
 	}
 }
+
+@media (width <= 612px) {
+	.character-wrapper {
+		&__img {
+			filter: grayscale(0%);
+		}
+	}
+
+	.details-wrapper {
+		min-width: 0px;
+		margin: 1rem;
+
+		&__img {
+			border-radius: 20px 20px 0 0;
+			height: 75%;
+			width: 100px;
+		}
+
+		&__close {
+			color: #000;
+		}
+
+		.section-info {
+			padding: 2rem 2rem;
+			gap: 25px;
+		}
+	}
+}

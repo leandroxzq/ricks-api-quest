@@ -173,5 +173,26 @@ body {
     min-width: 0px;
   }
 }
+@media (width <= 612px) {
+  .character-wrapper__img {
+    filter: grayscale(0%);
+  }
+  .details-wrapper {
+    min-width: 0px;
+    margin: 1rem;
+  }
+  .details-wrapper__img {
+    border-radius: 20px 20px 0 0;
+    height: 75%;
+    width: 100px;
+  }
+  .details-wrapper__close {
+    color: #000;
+  }
+  .details-wrapper .section-info {
+    padding: 2rem 2rem;
+    gap: 25px;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
